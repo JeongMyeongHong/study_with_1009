@@ -3,6 +3,7 @@ package com.with1009.slayer;
 public class Weapon {
     private int attdmg = 1;
     private int upgradeLV = 0;
+    static int imprintingLV = 0;
 
     public Weapon(){
 
@@ -14,5 +15,8 @@ public class Weapon {
 
     void upgradeWeapon() {
         upgradeLV++;
+    }
+    public static void upgradeimprintingLV() {
+        imprintingLV++;
     }
 }

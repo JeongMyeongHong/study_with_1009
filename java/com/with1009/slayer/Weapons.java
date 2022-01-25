@@ -17,7 +17,6 @@ import java.util.Scanner;
 
 public class Weapons {
     static String hello = "무기 관리";
-    static int imprintingLV = 0;
 
     /*public Weapons(){
         Weapon[] weapon = new Weapon[8];
@@ -25,9 +24,7 @@ public class Weapons {
             weapon[i] = new Weapon();
         }
     }*/
-    public static void upgradeimprintingLV() {
-        imprintingLV++;
-    }
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -45,7 +42,7 @@ public class Weapons {
             if(menunum == 1){//정보보기창
                 System.out.println("무기의 번호 선택(0~7)");
                 int weaponnum = scanner.nextInt();
-                int showdmg = weapon[weaponnum].getTotalDMG(imprintingLV);
+                int showdmg = weapon[weaponnum].getTotalDMG(Weapon.imprintingLV);
                 System.out.println(weaponnum+"번 무기의 데미지는 : "+showdmg+" 입니다.");
             }
             else if(menunum == 2){//강화창
@@ -58,13 +55,13 @@ public class Weapons {
                         System.out.println(weaponnum+"번 무기가 강화되었습니다.");
                     }
                 else if (upgradenum == 2){//무기각인
-                    upgradeimprintingLV();
+                    Weapon.upgradeimprintingLV();
                     System.out.println("무기각인이 되었습니다.");
                 }
             }
             else if(menunum == 3) {//전체 공격력 보기
                 for(int i = 0; i<weapon.length; i++){
-                    System.out.println(i+"번 무기 공격력 : "+weapon[i].getTotalDMG(imprintingLV));
+                    System.out.println(i+"번 무기 공격력 : "+weapon[i].getTotalDMG(Weapon.imprintingLV));
                 }
             }
         }
