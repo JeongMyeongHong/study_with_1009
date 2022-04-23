@@ -16,7 +16,7 @@ public class Weapon {
     void upgradeWeapon() {
         upgradeLV++;
     }
-    public static void upgradeimprintingLV() {
+    public static void upgradeImprintingLV() {
         imprintingLV++;
     }
     public static int getImprintingLV(){
